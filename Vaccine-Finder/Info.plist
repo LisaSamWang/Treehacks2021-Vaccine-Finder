@@ -36,6 +36,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app uses speech recognition to convert your speech into text.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app uses the mircrophone to record audio for speech recognition.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 import AVFoundation
 import MapKit
+import SwiftSpeech
 
 struct ContentView: View {
     @State var age: String = ""
@@ -40,10 +41,17 @@ struct ContentView: View {
                             mandarin = true
                         }) {
                         HStack {
-                                Text("Chinese-Mandarin")
+                                Text("Mandarin")
                                     .fontWeight(.semibold)
                             }
                     }
+                    }
+                    Text(" | ").font(.title).foregroundColor(.red)
+                    Button(action: {
+                        SwiftSpeech.requestSpeechRecognitionAuthorization()
+                    }) {
+                        Text("Speech-to-text")
+                            .fontWeight(.semibold)
                     }
                     }
                     HStack{
@@ -53,7 +61,7 @@ struct ContentView: View {
                     reader.speak(readintro)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -70,7 +78,15 @@ struct ContentView: View {
                         reader.speak(readage)
                     }) {
                         Image(systemName: "speaker.wave.3.fill")
-                            .padding().font(.title)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
+                    Button(action: { SwiftSpeech.RecordButton()
+                            .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                            .onRecognizeLatest(update: $age)}) {
+                        Image(systemName: "mic").padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .clipShape(Circle())
@@ -85,7 +101,15 @@ struct ContentView: View {
                         reader.speak(readstate)
                     }) {
                         Image(systemName: "speaker.wave.3.fill")
-                            .padding().font(.title)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
+                    Button(action: { SwiftSpeech.RecordButton()
+                            .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                            .onRecognizeLatest(update: $state)}) {
+                        Image(systemName: "mic").padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .clipShape(Circle())
@@ -100,7 +124,15 @@ struct ContentView: View {
                         reader.speak(readprof)
                     }) {
                         Image(systemName: "speaker.wave.3.fill")
-                            .padding().font(.title)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
+                    Button(action: { SwiftSpeech.RecordButton()
+                            .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                            .onRecognizeLatest(update: $essentialworker)}) {
+                        Image(systemName: "mic").padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .clipShape(Circle())
@@ -115,7 +147,15 @@ struct ContentView: View {
                         reader.speak(readmed)
                     }) {
                         Image(systemName: "speaker.wave.3.fill")
-                            .padding().font(.title)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
+                    Button(action: { SwiftSpeech.RecordButton()
+                            .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                            .onRecognizeLatest(update: $medicalcond)}) {
+                        Image(systemName: "mic").padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .clipShape(Circle())
@@ -178,11 +218,12 @@ struct MandarinView: View{
                 reader.speak(readintro)
             }) {
                 Image(systemName: "speaker.wave.3.fill")
-                    .padding().font(.title)
+                    .padding()
                     .foregroundColor(.white)
                     .background(Color.blue)
                     .clipShape(Circle())
             }
+                    
                     Text("您好，欢迎使用VaccineFinder！要确认打针资格，请填写以下内容:").lineLimit(5)
                         .padding()
                 }
@@ -195,7 +236,15 @@ struct MandarinView: View{
                     reader.speak(readage)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $age)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -210,7 +259,15 @@ struct MandarinView: View{
                     reader.speak(readstate)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $state)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -225,7 +282,15 @@ struct MandarinView: View{
                     reader.speak(readprof)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $essentialworker)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -240,7 +305,15 @@ struct MandarinView: View{
                     reader.speak(readmed)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "en_US"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $medicalcond)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -321,7 +394,15 @@ struct SpanishView: View{
                     reader.speak(readage)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "es_ES"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $age)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -336,7 +417,15 @@ struct SpanishView: View{
                     reader.speak(readstate)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "es_ES"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $state)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -351,7 +440,15 @@ struct SpanishView: View{
                     reader.speak(readprof)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "es_ES"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $essentialworker)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())
@@ -366,7 +463,15 @@ struct SpanishView: View{
                     reader.speak(readmed)
                 }) {
                     Image(systemName: "speaker.wave.3.fill")
-                        .padding().font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                }
+                Button(action: { SwiftSpeech.RecordButton()
+                        .swiftSpeechRecordOnHold(locale: Locale(identifier: "es_ES"), animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
+                        .onRecognizeLatest(update: $medicalcond)}) {
+                    Image(systemName: "mic").padding()
                         .foregroundColor(.white)
                         .background(Color.blue)
                         .clipShape(Circle())

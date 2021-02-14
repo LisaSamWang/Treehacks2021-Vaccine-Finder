@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		31B1C80925D97AD1009BB183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B1C80825D97AD1009BB183 /* Assets.xcassets */; };
 		31B1C80C25D97AD1009BB183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B1C80B25D97AD1009BB183 /* Preview Assets.xcassets */; };
 		31B1C81525D97B7B009BB183 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B1C81425D97B7B009BB183 /* LocationManager.swift */; };
+		31B1C81925D9A12A009BB183 /* SwiftSpeech in Frameworks */ = {isa = PBXBuildFile; productRef = 31B1C81825D9A12A009BB183 /* SwiftSpeech */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B1C81925D9A12A009BB183 /* SwiftSpeech in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +90,9 @@
 			dependencies = (
 			);
 			name = "Vaccine-Finder";
+			packageProductDependencies = (
+				31B1C81825D9A12A009BB183 /* SwiftSpeech */,
+			);
 			productName = "Vaccine-Finder";
 			productReference = 31B1C80125D97AD0009BB183 /* Vaccine-Finder.app */;
 			productType = "com.apple.product-type.application";
@@ -115,6 +120,9 @@
 				Base,
 			);
 			mainGroup = 31B1C7F825D97AD0009BB183;
+			packageReferences = (
+				31B1C81725D9A12A009BB183 /* XCRemoteSwiftPackageReference "SwiftSpeech" */,
+			);
 			productRefGroup = 31B1C80225D97AD0009BB183 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31B1C81725D9A12A009BB183 /* XCRemoteSwiftPackageReference "SwiftSpeech" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Cay-Zhang/SwiftSpeech.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31B1C81825D9A12A009BB183 /* SwiftSpeech */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B1C81725D9A12A009BB183 /* XCRemoteSwiftPackageReference "SwiftSpeech" */;
+			productName = SwiftSpeech;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 31B1C7F925D97AD0009BB183 /* Project object */;
 }
