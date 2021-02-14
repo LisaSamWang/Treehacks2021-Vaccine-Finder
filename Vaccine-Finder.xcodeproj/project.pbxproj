@@ -11,6 +11,7 @@
 		31B1C80725D97AD0009BB183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B1C80625D97AD0009BB183 /* ContentView.swift */; };
 		31B1C80925D97AD1009BB183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B1C80825D97AD1009BB183 /* Assets.xcassets */; };
 		31B1C80C25D97AD1009BB183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B1C80B25D97AD1009BB183 /* Preview Assets.xcassets */; };
+		31B1C81525D97B7B009BB183 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B1C81425D97B7B009BB183 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		31B1C80825D97AD1009BB183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B1C80B25D97AD1009BB183 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31B1C80D25D97AD1009BB183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31B1C81425D97B7B009BB183 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				31B1C80425D97AD0009BB183 /* Vaccine_FinderApp.swift */,
 				31B1C80625D97AD0009BB183 /* ContentView.swift */,
+				31B1C81425D97B7B009BB183 /* LocationManager.swift */,
 				31B1C80825D97AD1009BB183 /* Assets.xcassets */,
 				31B1C80D25D97AD1009BB183 /* Info.plist */,
 				31B1C80A25D97AD1009BB183 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				31B1C80725D97AD0009BB183 /* ContentView.swift in Sources */,
 				31B1C80525D97AD0009BB183 /* Vaccine_FinderApp.swift in Sources */,
+				31B1C81525D97B7B009BB183 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
